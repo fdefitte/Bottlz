@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Bottlz</title>
+	<link rel="stylesheet" href="css/jquery.mobile.css" />
+	<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+	<link rel="stylesheet" href="themes/bottlz.min.css" />
+	<link rel="stylesheet" href="css/kiwination.css" />
+</head>
+
+<body>
+
+
+
+
+
+<!-- NEW EVENT -->
+
+<div data-role="page" data-theme="b" id="new_event">
+	
+	<!-- Header -->
+	
+	<div data-role="header" data-position="fixed" data-id="fixed_nav"> <!-- having the same data-id as the footer means that both get to stay fixed, see documentation -->
+		<h1>Bottlz</h1>
+	</div>
+	
+	<!-- Body -->
+	
+	<div data-role="content">
+		<div class="ui-grid-b">
+			<label for="nombre_de_personnes"><u>Combien de personnes seront la?</u></label>
+			<div class="ui-block-a"><img class="img-3" src="images/team.png"/></div>
+			<div class="ui-block-b">
+				<input type="text" id="nombre_de_personnes" name="nombre_de_personnes"/>
+			</div>
+		</div>
+		<div class="ui-grid-b">
+			<label for="ponderation_homme_femme"><u>Quelle est la pondération homme/femme?</u></label>
+			<div class="ui-block-a"><img class="img-4" src="images/male.png"/></div>
+			<div class="ui-block-b">
+				<input type="range" data-inline="true" id="ponderation_homme_femme_slider" min="0" max="100" name="ponderation_homme_femme"/>
+			</div>
+			<div class="ui-block-c"><img class="img-4" src="images/female.png"/></div>
+		</div>
+			<fieldset data-role="controlgroup" data-type="horizontal">
+				<legend><u>C'est pour quel type de soirée?</u></legend>
+				<input type="radio" id="petite_sauterie" name="type_de_soiree"/>
+				<label for="petite_sauterie">Posey..</label>
+				<input type="radio" id="teuf" name="type_de_soiree" checked="checked"/>
+				<label for="teuf">Bonne teuf</label>
+				<input type="radio" id="project_x" name="type_de_soiree"/>
+				<label for="project_x">On va tout casser!</label>
+			</fieldset>
+			<input type="button" value="GO" id="new_event_submit"/>
+	</div>
+	
+	<!-- Footer -->
+	
+	<div data-role="footer" data-position="fixed" data-id="fixed_nav">
+		<div data-role="navbar">
+			<ul>
+				<li><a href="#parameters" data-direction="reverse" data-icon="gear"></a></li>
+				<li><a href="#new_event" data-icon="plus" class="ui-btn-active"></a></li>
+				<li><a href="#profile" data-icon="user"></a></li>
+			</ul>
+		</div>
+	</div>
+	
+
+
+<!-- RESULTS -->
+
+<div data-role="page" data-theme="b" id="results">
+	
+	<!-- Header -->
+	
+	<div data-role="header" data-position="fixed" data-id="fixed_nav"> <!-- having the same data-id as the footer means that both get to stay fixed, see documentation -->
+		<h1>Bottlz</h1>
+	</div>
+	
+	<!-- Body -->
+	
+	<div data-role="content">
+		<p>Yo</p>
+	</div>
+	
+	<!-- Footer -->
+	
+	<div data-role="footer" data-position="fixed" data-id="fixed_nav">
+		<div data-role="navbar">
+			<ul>
+				<li><a href="#parameters" data-direction="reverse" data-icon="gear"></a></li>
+				<li><a href="#new_event" data-icon="plus" class="ui-btn-active"></a></li>
+				<li><a href="#profile" data-icon="user"></a></li>
+			</ul>
+		</div>
+	</div>
+	
+</div>
+	
+	
+</div>
+
+
+<!-- JAVASCRIPT -->
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.mobile.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/touch-punch.js"></script>
