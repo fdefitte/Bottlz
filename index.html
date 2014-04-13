@@ -30,27 +30,28 @@
 	<!-- Body -->
 	
 	<div data-role="content">
+		<!--Nombre de personnes-->
 		<div class="ui-grid-b">
-			<label for="nombre_de_personnes"><u>Combien de personnes seront la?</u></label>
+			<label for="nombre_de_personnes">Combien de personnes seront la?</label><br>
 			<div class="ui-block-a"><img class="img-3" src="images/team.png"/></div>
 			<div class="ui-block-b">
 				<input type="text" id="nombre_de_personnes" name="nombre_de_personnes"/>
 			</div>
 		</div>
-			<label for="ponderation_homme_femme"><u>Quelle est la pondération homme/femme?</u></label>
-			<div data-role="fieldcontain">
-				<div class="inline" style="width:15%">
-					<img class="img-2" data-inline="true" src="images/male.png"/>
-				</div>
-				<div class="inline" style="width:60%">
-					<input type="range" data-inline="true" id="ponderation_homme_femme_slider" min="0" max="100" name="ponderation_homme_femme"/>
-				</div>
-				<div class="inline" style="width:15%">
-					<img class="img-2" data-inline="true" src="images/female.png"/>
-				</div>
+		<!--Ponderation_homme_femme-->
+			<label for="ponderation_homme_femme">Quelle est la pondération homme/femme?</label><br>
+			<div class="inline" style="width:15%">
+				<img class="img-2" data-inline="true" src="images/male.png"/>
 			</div>
+			<div class="inline" style="width:60%">
+				<input type="range" data-inline="true" id="ponderation_homme_femme_slider" min="0" max="100" name="ponderation_homme_femme"/>
+			</div>
+			<div class="inline" style="width:15%">
+				<img class="img-2" data-inline="true" src="images/female.png"/>
+			</div>
+		<!--Type de soirée-->
 			<fieldset data-role="controlgroup" data-type="horizontal">
-				<legend><u>C'est pour quel type de soirée?</u></legend>
+				<legend>C'est pour quel type de soirée?</legend><br>
 				<input type="radio" id="petite_sauterie" name="type_de_soiree"/>
 				<label for="petite_sauterie">Posey..</label>
 				<input type="radio" id="teuf" name="type_de_soiree" checked="checked"/>
@@ -58,7 +59,8 @@
 				<input type="radio" id="project_x" name="type_de_soiree"/>
 				<label for="project_x">On va tout casser!</label>
 			</fieldset>
-			<input type="button" value="GO" id="new_event_submit"/>d
+			<br><br>
+			<input type="button" value="GO" id="new_event_submit"/>
 	</div>
 	
 	<!-- Footer -->
@@ -72,7 +74,11 @@
 			</ul>
 		</div>
 	</div>
-	
+</div><!--New_event-->
+
+
+
+
 
 
 <!-- RESULTS -->
@@ -104,7 +110,76 @@
 	</div>
 	
 </div>
+
+
+
+
+
+
+
+<!-- PARAMETERS -->
+
+<div data-role="page" data-theme="b" id="parameters">
 	
+	<!-- Header -->
+	
+	<div data-role="header" data-position="fixed" data-id="fixed_nav"> <!-- having the same data-id as the footer means that both get to stay fixed, see documentation -->
+		<h1>Bottlz</h1>
+	</div>
+	
+	<!-- Body -->
+	
+	<div data-role="content">
+		<p>Yo</p>
+	</div>
+	
+	<!-- Footer -->
+	
+	<div data-role="footer" data-position="fixed" data-id="fixed_nav">
+		<div data-role="navbar">
+			<ul>
+				<li><a href="#parameters" data-direction="reverse" data-icon="gear"></a></li>
+				<li><a href="#new_event" data-icon="plus" class="ui-btn-active"></a></li>
+				<li><a href="#profile" data-icon="user"></a></li>
+			</ul>
+		</div>
+	</div>
+	
+</div>
+	
+
+
+
+
+
+
+<!-- PROFILE -->
+
+<div data-role="page" data-theme="b" id="profile">
+	
+	<!-- Header -->
+	
+	<div data-role="header" data-position="fixed" data-id="fixed_nav"> <!-- having the same data-id as the footer means that both get to stay fixed, see documentation -->
+		<h1>Bottlz</h1>
+	</div>
+	
+	<!-- Body -->
+	
+	<div data-role="content">
+		<p>Yo</p>
+	</div>
+	
+	<!-- Footer -->
+	
+	<div data-role="footer" data-position="fixed" data-id="fixed_nav">
+		<div data-role="navbar">
+			<ul>
+				<li><a href="#parameters" data-direction="reverse" data-icon="gear"></a></li>
+				<li><a href="#new_event" data-icon="plus" class="ui-btn-active"></a></li>
+				<li><a href="#profile" data-icon="user"></a></li>
+			</ul>
+		</div>
+	</div>
 	
 </div>
 
