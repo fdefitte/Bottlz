@@ -29,22 +29,24 @@
 	
 	<!-- Body -->
 	
+	
 	<div data-role="content">
+	<form name="new_event_form">
 		<!--Nombre de personnes-->
 		<div class="ui-grid-b">
 			<label for="nombre_de_personnes">Combien de personnes seront la?</label><br>
 			<div class="ui-block-a"><img class="img-3" src="images/team.png"/></div>
 			<div class="ui-block-b">
-				<input type="text" id="nombre_de_personnes" name="nombre_de_personnes"/>
+				<input type="number" id="nombre_de_personnes" name="nombre_de_personnes"/>
 			</div>
 		</div>
 		<!--Ponderation_homme_femme-->
-			<label for="ponderation_homme_femme">Quelle est la pondération homme/femme?</label><br>
+			<label for="ponderation_homme_femme">Quelle est la pondération homme/femme (%)?</label><br>
 			<div class="inline" style="width:15%">
 				<img class="img-2" data-inline="true" src="images/male.png"/>
 			</div>
 			<div class="inline" style="width:60%">
-				<input type="range" data-inline="true" id="ponderation_homme_femme_slider" min="0" max="100" name="ponderation_homme_femme"/>
+				<input type="range" data-inline="true" id="ponderation_homme_femme" min="0" max="100" name="ponderation_homme_femme"/>
 			</div>
 			<div class="inline" style="width:15%">
 				<img class="img-2" data-inline="true" src="images/female.png"/>
@@ -52,16 +54,18 @@
 		<!--Type de soirée-->
 			<fieldset data-role="controlgroup" data-type="horizontal">
 				<legend>C'est pour quel type de soirée?</legend><br>
-				<input type="radio" id="petite_sauterie" name="type_de_soiree"/>
-				<label for="petite_sauterie">Posey..</label>
-				<input type="radio" id="teuf" name="type_de_soiree" checked="checked"/>
+				<input type="radio" id="apero" name="type_de_soiree" value="apero" checked="checked"/>
+				<label for="apero">Apéro</label>
+				<input type="radio" id="teuf" name="type_de_soiree" value="teuf"/>
 				<label for="teuf">Bonne teuf</label>
-				<input type="radio" id="project_x" name="type_de_soiree"/>
+				<input type="radio" id="project_x" value="project_x" name="type_de_soiree"/>
 				<label for="project_x">On va tout casser!</label>
 			</fieldset>
 			<br><br>
-			<input type="button" value="GO" id="new_event_submit"/>
+			<input type="button" value="GO" id="new_event_submit" onclick="form_function()"/>
+	</form>
 	</div>
+	
 	
 	<!-- Footer -->
 	
@@ -190,3 +194,64 @@
 <script src="js/jquery.mobile.js"></script>
 <script src="js/jquery-ui.min.js"></script>
 <script src="js/touch-punch.js"></script>
+
+
+<script>
+
+/*
+Variable names:
+NDP = nombre de personnes
+PHF = pondération homme femmes
+TDS = type de soirée
+NDG = nombre de garçons
+NDF = nombre de filles
+QH = quantité de hard
+QS = quantité de soft
+QV = quantité de vin
+CHG = coefficient hard garçons (la quantité dans un verre)
+CHF = coefficient hard filles
+CSG = coefficient soft garcons
+CSF = coefficient soft filles
+CV = coefficient vin
+Les coefficients sont calculés en nombre de bouteilles de 75cl (ex: 0,3 = 1/3 de bouteille = 25cl) et seront multipliés par le nombre de filles et de garçons puis arrondis.
+*/
+	
+var CHG = 0.1/0.75,
+	CSG = 0.15/0.75,
+	CHF = 0.05/0.75,
+	CSF = 0.2/0.75;
+
+	function form_function() {
+		var NDP, PHF, TDS, NDG, NDF;
+		NDP = document.getElementById('nombre_de_personnes').value;
+		PHF = (document.getElementById('ponderation_homme_femme').value)/100;
+		NDG = NDP * PHF;
+		NDF = NDP * (1 - PHF);
+		
+		/*Let's figure out what radio button was pressed */
+		
+		if (document.getElementById('apero').checked) {
+			TDS = document.getElementById('apero').value;
+			var QH = (NDF * CHF * 1) + (NDG * CHG * 3);
+			var QS = (NDF * CSF * 1) + (NDG * CSG * 3);
+			alert("the amount of booz is " + QH + " bottles.");
+			}
+		else if (document.getElementById('project_x').checked) {
+			TDS = document.getElementById('project_x').value;
+			var QH = (NDF * CHF * 8) + (NDG * CHG * 12);
+			var QS = (NDF * CSF * 8) + (NDG * CSG * 12);
+			alert("the amount of booz is " + QH + " bottles.");
+			}
+		else {
+			TDS = document.getElementById('teuf').value;
+			var QH = (NDF * CHF * 4) + (NDG * CHG * 6);
+			var QS = (NDF * CSF * 4) + (NDG * CSG * 6);
+			alert("the amount of booz is " + QH + " bottles.");
+			}
+	}
+	
+</script>
+
+
+</body>
+</html>
