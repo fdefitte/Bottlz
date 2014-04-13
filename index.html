@@ -11,6 +11,8 @@
 	<link rel="stylesheet" href="css/kiwination.css" />
 </head>
 
+<!-- Il faut citer: creative commons pour l'image "citrus" -->
+
 <body>
 
 
@@ -62,7 +64,7 @@
 				<label for="project_x">On va tout casser!</label>
 			</fieldset>
 			<br><br>
-			<input type="button" value="GO" id="new_event_submit" onclick="form_function()"/>
+			<a href="#results" data-role="button" onclick="form_function()"/>GO</a>
 	</form>
 	</div>
 	
@@ -98,7 +100,22 @@
 	<!-- Body -->
 	
 	<div data-role="content">
-		<p>Yo</p>
+		<div class="ui-grid-a">
+			<div class="ui-block-a">
+				<img class="img-3" src="images/bottle_hard.png"/>
+			</div>
+			<div class="ui-block-b">
+				<p id="hard_bottle_count">No result yet chuppy cake</p>
+			</div>
+		</div>
+		<div class="ui-grid-a">
+			<div class="ui-block-a">
+				<img class="img-3" src="images/citrus.png"/>
+			</div>
+			<div class="ui-block-b">
+				<p id="hard_bottle_count">No result yet chuppy cake</p>
+			</div>
+		</div>
 	</div>
 	
 	<!-- Footer -->
@@ -251,7 +268,5 @@ var CHG = 0.1/0.75,
 	}
 	
 </script>
-
-
 </body>
 </html>
